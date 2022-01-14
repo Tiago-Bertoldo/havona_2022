@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,500;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,100;1,300&display=swap');
+
+
 :root {
     --blue : #5278ba;
     --font : #535151;
@@ -10,6 +13,7 @@
 .section {
     display: flex;
     flex-direction: row;
+    background-color: white;
 }
 
 body {
@@ -17,9 +21,11 @@ body {
 }
 .nav {
     width: 100%;
-    height: 8em;
+    height: 7em;
     display: flex;
     background-color: #eaeaea;
+    position: relative;
+    z-index: 10;
 }
 
 .menu {
@@ -88,7 +94,7 @@ body {
 }
 
 .menu-resposive {
-    z-index: 7;
+    z-index: 10;
     display: none;
     cursor: pointer;
 }
@@ -116,8 +122,8 @@ body {
     margin-top: 5em;
     color: black;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
     color: #646464;
     font-weight: 600;
     letter-spacing: 1px;
@@ -148,7 +154,7 @@ body {
         margin-top: 5em;
         left: 0;
         width: 50vh;
-        height: calc(100% - 10%);
+        height: 450vh;
         background-color: #eaeaea;
         transform: translateX(-150%); 
         -webkit-transform: translateX(-150%);
@@ -217,71 +223,93 @@ body {
     justify-content: space-between;
     margin: 0 auto;
 }
+
+.img-resposive {
+    display: none;
+}
 .container {
     margin: 0 auto;
     display: flex;
     width: 1240px;
+
 }
 
-.one-left img {
-    display: block;
+.img-normal {
+    width: calc(100%);
+    position:absolute;
+    height: 670px;
+    top:0;
+    z-index: 1;
+    filter: opacity(40%);
 }
 
 .one-left h1 {
-    z-index: 7;
-    display: block;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 28pt;
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 38pt;
+    color: rgb(0, 0, 0);
     font-weight: bold ;
-    letter-spacing: 0px;
-    margin: -9em 0 0 0.6em;
+    margin: 1.6em 0 2em 3em;
+    position: relative;
+    z-index: 5;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px 5px #030404;
+   
 }
 
 .one-left p {
-    z-index: 7;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 18pt;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20pt;
     color: white;
     font-weight: normal ;
-    letter-spacing: 1px;
-    margin: 1.2em 0 0 1em;
-    width: calc(100% - 30%);
+    margin: -2em 0 0 5.6em ;
+    width: 25em;
+    line-height:35pt;
+    position: relative;
+    z-index: 5;
 }
 
-.one-right {
-    width: calc(100% - 25%);
-    z-index: 2;
-}
-.one-right img {
-    width: 520px;
-    height: 307px;
-    margin: 6em auto;
-}
+
+
 
 @media screen and (max-width:790px) {
     .container {
         width: 320px;
         display: flex;
         flex-direction: column;
+
     }
     .section {
+        width: calc(100%);
         height: 300px;
+        border: 1px solid black;
+    }
+    .img-normal{
+        display: none;
+        filter: opacity(40%);
+    }
+
+    .img-resposive {
+        position:absolute;
+        height: 670px;
+        top:0;
+        z-index: 1;
+        filter: opacity(40%);
+        display: block;
     }
     .one-left p {
-        margin: 2em 0 0 3em;
-        font-size: 11px;
+        font-size: 14px;
+        margin: 3em auto;
+        line-height:20pt;
     }
     .one-left h1 {
-        margin: -13em 0 0 2em;
-        font-size: 17px;
+        font-size: 20px;
+        margin: 3em auto;
     }
-    .one-left img {
-        margin: 0.6em auto;
-        width: calc(100% - 10%);
-    }
+    /* .section img {
+        width: calc(100%);
+    } */
     .one-right {
         display: none;
     }
@@ -294,58 +322,121 @@ body {
 
 /* START SECTION-TWO */
 
-.section-two {
+.problem {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    margin-bottom: 2em;
-    
+    margin: 0 auto;
+    z-index: 9;
+    height: 0.1px;
 }
+
+.problem > h1 {
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 9;
+    margin-top: 0.3em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22pt;
+    color: #000000;
+    font-weight: bold ;       
+    text-align: center;
+    padding: 1em;
+}
+
+.section-two {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2em;
+    position: relative;
+    z-index: 3;
+    padding: 6em 0 0 0 ; 
+}
+
+
+@keyframes efeitos {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .container-two {
+    position: relative;
+    z-index: 3;
     width: 1240px;
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 3em auto;
+    padding: 1em;
+    border-radius: 10px;
 }
 
-.two-left {
-    width: calc(100% - 50%);
-}
-.two-left img {
-    margin-top: 3em;
-    margin-left: 6em;
-    width: calc(100% - 20%);
-}
-
-.two-right {
-    width: calc(100% - 50%);
-    text-align: center;
-}
-
-.two-right h1 {
-    margin-top: 3em;
-    text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 22pt;
-    color: #686565;
-    font-weight: bold ;
-    letter-spacing: 1px;
+.effect-container {
+    box-shadow: 1px 1px 2px 1px #5278ba;
 }
 
 .plus {
-    margin: 4em 0 0 10em;
-    width: 45vh;
     display: flex;
-    flex-direction: row;
+    justify-content: center;  
+    width: 1024px;    
 }
 
-.plus ul {
-    list-style: none;
-    text-align: left;
+.plus-icon {
+    width: 35em;
+    height: 10em;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 3em;
+    padding: 2em;
+    opacity: 0;
+}
+
+.plus-icon > h1 {
+    margin-top: 0.3em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18pt;
+    color: #000000;
+    font-weight: bold ;       
+    text-align: center;
+}
+
+.plus-icon > p {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 29px;
+    margin: 1em auto;
+    text-align: center;
+}
+
+@media screen and (max-width:790px){
+    .container-two {
+        width: 320px;
+    }
+    .plus-icon > p {
+        font-size: 12px;
+    }
+    .plus-icon > h1 {
+        font-size: 17px;
+    }
     
 }
 
+
+
+.toone  {
+    transition: opacity 1s ease-in;
+    opacity: 1;
+ }
 
 /* .fa-plus-circle {
     font-size: 2em;
@@ -356,93 +447,8 @@ body {
     color: rgb(126, 231, 105);
 } */
 
-.img-plus {
-    width: 1.7em;
-    height: 1.7em;
-}
 
-.img-kick {
-    background-image: url(../img/hover.png);
-}
-
-.fa-minus-circle {
-    color: red;
-}
-.plus li {
-    padding: 1em;
-    cursor: pointer;
-}
-.plus a {
-    margin-left: 1em;
-    text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 14pt;
-    color: #020202;
-    font-weight: bold ;
-    letter-spacing: 1px;
-}
-
-.trust , .transparency , .cost , .risk , .paper , .email {
-    display: none;
-    /* visibility: hidden;
-    animation-name: teste; */
-}
-
-.plus p {
-    margin: 0.7em 0 0 7em;
-    text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 10pt;
-    color: #000000;
-    font-weight: bold ;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 1em;
-    
-}
-.trusts  {
-    display: flex;
-}
-
-.plus p:hover {
-    cursor: pointer;
-    margin-top: 2em;
-    padding: 1em;
-    transition: 0.6s ease-in;
-    transform: scale(1.3);
-}
-
-.menos {
-    background-image: url(../img/minus.png);
-}
 /* 
-RESPOSIVE */
-@media screen and (max-width:790px) {
-    .container-two {
-        align-items: center;
-        flex-direction: column;
-    }
-    .two-right {
-        margin: 0 auto;
-        width: 30vh;
-    }
-    .plus {
-      width: 28vh;
-      margin: 0 auto;
-    }
-    .plus a {
-        font-size: 10pt;
-    }
-    .two-left img {
-        margin: 0 auto;
-    }
-
-    .plus ul {
-        margin-left: -5em;
-    }
-}
-/* END SECTION-TWO */
-
 
 
  /* START SECTION-THREE */
@@ -450,82 +456,109 @@ RESPOSIVE */
     display: flex;
     flex-direction: row;
     width: 100% ;
-    background-color: #5278ba;
+    background-color: #4e7ed0;
+    min-height: 400px;
 }
 
 .container-three {
     width: 1240px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 0 auto;
+    flex-wrap: wrap;
+    margin-top: 14em;
     
 }
 
-.three-left {
-    width: calc(100% - 50%);
-}
-
-.three-right {
-    width: calc(100% - 50%);   
-}
-
-.three-right img {
-    display: block;
-    margin: 2.5em auto;
-    width: calc(100% - 20% ) ;
+.two-icon {
+    padding: 3em;
+    width: 35em;
+    margin-top: 6rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
 
 
-.three-left h1 {
-        margin-top: 1.3em;
-        text-decoration: none;
-        font-family: 'Noto Sans', sans-serif;
-        font-size: 22pt;
-        color: #3d3c3c;
-        font-weight: bold ;       
-        text-align: center;
-}
-
-.three-left ul {
-    margin: 0 auto;
-    width: calc(100% - 10%);
-}
-.three-left li {
-    display: flex;
-    padding: 2em;
-}
-
-.three-left label {
-    margin-left: 1em;
-    text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 13pt;
-    color: #eeebeb;
-    font-weight: normal;
-    letter-spacing: 0.5px;
-}
 
 .fa-check-circle {
-    font-size: 2.6em;
-    color: #22c9d3;
+    font-size: 3em;
+    color: #0cff49;
+}
+
+.two-icon label {
+    margin-left: 1em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    color: #eeebeb;
+    font-weight: normal;
+    line-height: 30px;
+}
+.solutions {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    z-index: 9;
+    height: 0.1px;
+}
+
+.solutions > h1 {
+    margin: 1.3em auto;
+    z-index: 9;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 22pt;
+    color: #000000;
+    font-weight: bold ;       
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.solutions > p {
+    margin-left: 1em;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: 30px;
+    margin: 0 auto;
+
 }
 
 .its-easy {
-    margin-left: 8em;
-    margin-bottom: 2em;
+    margin: 5em 35em 2em 0;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15pt;
+    color: #090808;
+    font-weight: normal;
+    line-height: 30px;
 }
 
-.post-trader {
-    margin-top: 1em;
-    margin-left: 3em;
+@media screen and (max-width:790px){
+    .container-three {
+        width: 320px;
+        margin-top: 10em;
+    }
+
+    .two-icon > p {
+        font-size: 12px;
+    }
+    .two-icon  > label {
+        font-size: 17px;
+    }
+
+
+    
 }
+
+
 
 /* RESPOSIVE  */
 
-@media screen and (max-width:780px){
+/* @media screen and (max-width:780px){
     .container-three {
         width: calc(100%);
         flex-direction: column;
@@ -552,7 +585,7 @@ RESPOSIVE */
         font-size: 5pt;
         margin-left: 1em;
     }
-}
+} */
 
  /* END SECTION-THREE */
 
@@ -586,7 +619,7 @@ RESPOSIVE */
     margin-top: 5em;
     color: black;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 8px;
     color: #646464;
     font-weight: 600;
@@ -616,7 +649,7 @@ RESPOSIVE */
 .check h1 {
     margin-top: 5px;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 7pt;
     color: black;
     font-weight: bold ;
@@ -645,7 +678,7 @@ RESPOSIVE */
     box-shadow: 1px 1px 5px 1px #9ea2a4 ;
     -webkit-box-shadow: 1px 1px 5px 1px #9ea2a4;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: #ffffff;
     font-weight: bold ;
@@ -663,7 +696,7 @@ RESPOSIVE */
     margin: -1.7em 0 0 -34em;
     color: black;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 7px;
     color: #000000;
     font-weight: bold ;
@@ -682,7 +715,7 @@ RESPOSIVE */
     position: absolute;
     margin: 1em 0 0 5em;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     color: #000000;
     font-weight: bold ;
@@ -709,7 +742,7 @@ CONFIG INPUT  */
     padding-left: 3em;
     border: 1px solid black;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: #000000;
     font-weight: bold ;
@@ -730,7 +763,7 @@ CONFIG INPUT  */
     background-position: 7px 9px;
     padding: 0.8em 0 0 3em;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: #000000;
     font-weight: bold ;
@@ -747,7 +780,7 @@ CONFIG INPUT  */
     background-color: #009da2;
     box-shadow: 1px 1px 5px 1px #9ea2a4;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
     color: #ffffff;
     font-weight: bold ;
@@ -881,7 +914,7 @@ bloco-form config */
 .article-tec-one p {
     margin-top: 1.3em;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 22pt;
     color: #fffefe;
     font-weight: bold ;       
@@ -903,7 +936,7 @@ bloco-form config */
 
 .article-tec-two h1 {
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 21pt;
     color: #464444;
     font-weight: bold ;       
@@ -913,7 +946,7 @@ bloco-form config */
 .article-tec-two p {
     margin-top: 0.7em;
     text-decoration: none;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 12pt;
     color: #313030;
     font-weight: normal ; 
@@ -926,6 +959,11 @@ bloco-form config */
     display: flex;
 }
 
+
+.dlt {
+    margin-top: 7em;
+
+}
 
 .article-tec-right {
     width: calc(100% - 50% ); 

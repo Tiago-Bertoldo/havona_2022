@@ -1,6 +1,6 @@
 function start() {
     menuResponsive();
-    hoverProblems();
+    effect();
 }
 
 
@@ -29,84 +29,32 @@ const menuResponsive = ()=>{
         
 }
 
-function hoverProblems(){
-    let icsRisk = document.querySelector('.risk');
-    let icsCost = document.querySelector('.cost');
-    let icsTransp = document.querySelector('.transparency');
-    let icsTrust = document.querySelector('.trust');
-    let icsPaper = document.querySelector('.paper');
-    let icsEmail = document.querySelector('.email');
-    let iconSelectd = document.querySelector('.ics_risk');
-    let iconSelectCost = document.querySelector('.ics_cost');
-    let iconSelectTransp = document.querySelector('.ics_transp');
-    let iconSelectTrust = document.querySelector('.ics_trust');
-    let iconSelectPaper = document.querySelector('.ics_paper');
-    let iconsSelectEmail = document.querySelector('.ics_email');
+function effect () {
+    let side = document.querySelectorAll('.plus-icon')
+    let container = document.querySelector('.container-two');
+    let experience = document.querySelector('.effect');
+    let cordenadas = window.pageYOffset;
+    console.log(side[1])    
+    if (cordenadas >= 400 ){
+        side[0].classList.add('toone');
+        side[1].classList.add('toone');
+        container.classList.add('effect-container');
 
-    let sets = 0;
-    addEventListener('click' , e => {
-        const el = e.target ;
-                    if (el.classList.contains('ics_risk')){
-                    icsRisk.classList.toggle('trusts');
-                    console.log('Cheguei aqui');
-                }else {
-                if (el.classList.contains('ics_risk' || sets >= 1)) {
-                    icsRisk.classList.remove('trusts');
-                }
-            }
-                if (el.classList.contains('ics_cost') && sets === 0 ){
-                    icsCost.classList.toggle('trusts');
-                }else {
-                if (el.classList.contains('ics_cost' || sets >= 1)) {
-                    icsCost.classList.remove('trusts');
-    
-                }
-            }
-
-                if (el.classList.contains('ics_transp') && sets === 0 ){
-                    icsTransp.classList.toggle('trusts');
-                }else {
-                    if (el.classList.contains('ics_transp' || sets >= 1)) {
-                        icsTransp.classList.remove('trusts');
-                    }
-                }
-        
-                if (el.classList.contains('ics_trust') && sets === 0 ){
-                    icsTrust.classList.toggle('trusts');
-                }else {
-                    if (el.classList.contains('ics_trust' || sets >= 1)) {
-                        icsTrust.classList.remove('trusts');
-        
-                    }
-                }
-        
-                if (el.classList.contains('ics_paper') && sets === 0 ){
-                    icsPaper.classList.toggle('trusts');
-                }else {
-                    if (el.classList.contains('ics_paper' || sets >= 1)) {
-                        icsPaper.classList.remove('trusts');
-                    }
-                }
-       
-                if (el.classList.contains('ics_email') && sets === 0 ){
-                    icsEmail.classList.toggle('trusts');
-                }else {
-                    if (el.classList.contains('ics_email' || sets >= 1)) {
-                        icsEmail.classList.remove('trusts');
-                    }
-                }
-         
-    })
-
-    addEventListener('mouseover' , e => {
-        const el = e.target ;
-        if(el.classList.contains('img-plus')){
-            iconSelectd.classList.toggle('img-kick');
-        }else {
-            iconSelectd.classList.remove('img-kick')
+        if (cordenadas >= 550){
+            side[2].classList.add('toone');
+            side[3].classList.add('toone');
         }
-            
-    })
+            if (cordenadas >= 650){
+                side[4].classList.add('toone');
+                side[5].classList.add('toone');
+            }
+    }
+    
 }
+
+
+window.addEventListener('scroll' , function (){
+    effect();
+});
 
 start();
