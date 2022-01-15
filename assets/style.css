@@ -216,7 +216,7 @@ body {
 
 /* START SECTION  */
 .section {
-    background-color: #5278ba;
+    background-image: linear-gradient(114.9deg, #222222 8.3%, #00283C 41.6%, #008FD5 93.4%);
     width: 100% ;
     height: 470px;
     display: flex;
@@ -466,7 +466,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100% ;
-    background-color: #4e7ed0;
+    background-image: linear-gradient(114.9deg, #222222 8.3%, #00283C 41.6%, #008FD5 93.4%);
     min-height: 400px;
 }
 
