@@ -955,11 +955,10 @@ bloco-form config */
 /* START TECHNOLOGY */
 .section-tec-one {
     width: calc(100%);
-    background-color: var(--blue);
     display: flex;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url(../img/back-tec.png);
+    background-image: linear-gradient(114.9deg, #222222 8.3%, #00283C 41.6%, #008FD5 93.4%);
     justify-items: center;  
 }
 /* START ARTICLE ONE */
@@ -968,6 +967,8 @@ bloco-form config */
     width: 1240px;
     display: flex;
     flex-direction: row;
+    background-image: url(../img/back-tec.png);
+    background-position-y: 23px;
 }
 .build {
     width: calc(100% - 50%);
@@ -1036,14 +1037,13 @@ bloco-form config */
 /* START SECTION  THREE  ///////////*/
 .section-tec-three {
     width: 100%;
-    background-color: var(--blue);
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left right;
-    background-image: url(../img/back-tec.png);
+    background-image:linear-gradient(114.9deg, #222222 8.3%, #00283C 41.6%, #008FD5 93.4%);
     z-index: 1;
 }
 
